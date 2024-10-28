@@ -1,0 +1,26 @@
+version: '3.0'
+services:
+  flight-service:
+    build: ./flight
+    ports:
+      - 81:80
+    volumes:
+      - flight-vol:/usr/local/apache2/htdocs
+  health-service:
+    build: ./health
+    ports:
+      - 82:80
+    volumes:
+      - health-vol:/usr/local/apche2/htdocs
+  multi-service:
+    build: ./multi
+    ports:
+      - 83:80
+    volumes:
+      - multi-vol:/usr/local/apache2/htdocs
+volumes:
+  flight-vol:
+  health-vol:
+  multi-vol:
+
+

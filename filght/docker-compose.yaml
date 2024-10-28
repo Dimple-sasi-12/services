@@ -1,0 +1,10 @@
+version: '3.0'
+services:
+  flight-service:
+    build: .
+    ports:
+      - 81:80
+    volumes:
+      - flight-vol:/usr/local/apache2/htdocs
+volumes:
+  flight-vol:
